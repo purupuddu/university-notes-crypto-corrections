@@ -52,12 +52,12 @@ Disclaimers ⚠️
 
 | Corso | Status | Aggiornati al |
 | ----- | :----: | :-----------: |
-| [Calcolo Differenziale](../../raw/main/Bachelor/Primo%20Anno/Calcolo%20Differenziale/Calcolo%20Differenziale.pdf) | Completi | 29/09/2025 |
-| [Calcolo Integrale](../../raw/main/Bachelor/Primo%20Anno/Calcolo%20Integrale/Calcolo%20Integrale.pdf) | Completi | 16/03/2025 |
+| [Calcolo Differenziale](../../raw/main/Bachelor/Primo%20Anno/Calcolo%20Differenziale/Calcolo%20Differenziale.pdf) <br/> (ora chiamato Analisi Mod. 1) | Completi | 29/09/2025 |
+| [Calcolo Integrale](../../raw/main/Bachelor/Primo%20Anno/Calcolo%20Integrale/Calcolo%20Integrale.pdf) <br/> (ora chiamato Analisi Mod. 2) | Completi | 16/03/2025 |
 | [Metodi Matematici per l'Informatica](../../raw/main/Bachelor/Primo%20Anno/Metodi%20Matematici%20per%20l'Informatica/Metodi%20Matematici%20per%20l'Informatica.pdf) | Completi | 28/07/2025 |
-| [Introduzione agli Algoritmi](../../raw/main/Bachelor/Primo%20Anno/Introduzione%20agli%20Algoritmi/Introduzione%20agli%20Algoritmi.pdf) | Completi | 16/03/2025 |
-| [Progettazione di Sistemi Digitali](../../raw/main/Bachelor/Primo%20Anno/Progettazione%20di%20Sistemi%20Digitali/Progettazione%20di%20Sistemi%20Digitali.pdf) | Completi | 16/03/2025 |
-| [Architettura degli Elaboratori](../../raw/main/Bachelor/Primo%20Anno/Architettura%20degli%20Elaboratori/Architettura%20degli%20Elaboratori.pdf) | Completi | 16/03/2025 |
+| [Introduzione agli Algoritmi](../../raw/main/Bachelor/Primo%20Anno/Introduzione%20agli%20Algoritmi/Introduzione%20agli%20Algoritmi.pdf) <br/> (ora chiamato Algoritmi Mod. 1)| Completi | 16/03/2025 |
+| [Progettazione di Sistemi Digitali](../../raw/main/Bachelor/Primo%20Anno/Progettazione%20di%20Sistemi%20Digitali/Progettazione%20di%20Sistemi%20Digitali.pdf) <br/> (ora chiamato Architettura degli Elaboratori I) | Completi | 16/03/2025 |
+| [Architettura degli Elaboratori](../../raw/main/Bachelor/Primo%20Anno/Architettura%20degli%20Elaboratori/Architettura%20degli%20Elaboratori.pdf) <br/> (ora chiamato Architettura degli Elaboratori II) | Completi | 16/03/2025 |
 | Fondamenti di Programmazione [ ! ] | - | - |
 | [Metodologie di Programmazione](https://raw.githubusercontent.com/ajhxia/UNI/c02ef1b27f924af41cb701ff60353be31e79438c/Primo%20Anno/Metodologie%20di%20Programmazione/Teoria/Metodologie_di_Programmazione.pdf) [ !! ]| Scritti da [@ajhxia](https://github.com/ajhxia) | - |
 </details>
@@ -69,15 +69,15 @@ Disclaimers ⚠️
 
   | Corso | Status | Aggiornati al |
   | ----- | :----: | :-----------: |
-  | [Algebra](../../raw/main/Bachelor/Secondo%20Anno/Algebra/Algebra.pdf) | Completi | 16/03/2025 |
-  | [Calcolo delle Probabilità](../../raw/main/Bachelor/Secondo%20Anno/Calcolo%20delle%20Probabilita/Calcolo%20delle%20Probabilita.pdf) | Completi | 24/11/2025 |
-  | [Progettazione di Algoritmi](../../raw/main/Bachelor/Secondo%20Anno/Progettazione%20di%20Algoritmi/Progettazione%20di%20Algoritmi.pdf) | Completi | 12/07/2025 |
-  | [Reti di Elaboratori](../../raw/main/Bachelor/Secondo%20Anno/Reti%20di%20Elaboratori/Reti%20di%20Elaboratori.pdf) | Completi | 16/03/2025 |
-  | [Sistemi Operativi I](../../raw/main/Bachelor/Secondo%20Anno/Sistemi%20Operativi%20I/Sistemi%20Operativi%20I.pdf) | Completi | 16/03/2025 |
-  | [Sistemi Operativi II](../../raw/main/Bachelor/Secondo%20Anno/Sistemi%20Operativi%20II/Sistemi%20Operativi%20II.pdf) | Completi | 16/03/2025 |
-  | [Basi di Dati I](../../raw/main/Bachelor/Secondo%20Anno/Basi%20di%20Dati%20I/Basi%20di%20Dati%20I.pdf) | Completi | 25/05/2025 |
-  | [Basi di Dati II](https://github.com/CasuFrost/University_notes/raw/main/Secondo%20Anno/Secondo%20Semestre/Basi%20di%20Dati%202/Latex%20source%20file/Basi%20di%20Dati%20modulo%202.pdf) [ !! ]| Scritti da [@CasuFrost](https://github.com/CasuFrost) | - |
-  | [Basi di Dati II - Progetti svolti](../../blob/main/Bachelor/Secondo%20Anno/Basi%20di%20Dati%20II/README.md) | Completi | 09/10/2024 |
+  | [Algebra](../../raw/main/Bachelor/Secondo%20Anno/Algebra/Algebra.pdf) <br/> (ora ristretto in Algebra Lineare) | Completi | 16/03/2025 |
+  | [Calcolo delle Probabilità](../../raw/main/Bachelor/Secondo%20Anno/Calcolo%20delle%20Probabilita/Calcolo%20delle%20Probabilita.pdf) <br/> (ora esteso in Probabilità e Statistica) | Completi | 24/11/2025 |
+  | [Progettazione di Algoritmi](../../raw/main/Bachelor/Secondo%20Anno/Progettazione%20di%20Algoritmi/Progettazione%20di%20Algoritmi.pdf) <br/> (ora chiamato Algoritmi Mod. 2)| Completi | 12/07/2025 |
+  | [Reti di Elaboratori](../../raw/main/Bachelor/Secondo%20Anno/Reti%20di%20Elaboratori/Reti%20di%20Elaboratori.pdf) <br/> (ora chiamato Fondamenti di Internet) | Completi | 16/03/2025 |
+  | [Sistemi Operativi I](../../raw/main/Bachelor/Secondo%20Anno/Sistemi%20Operativi%20I/Sistemi%20Operativi%20I.pdf) <br/> (ora chiamato Sistemi Operativi) | Completi | 16/03/2025 |
+  | [Sistemi Operativi II](../../raw/main/Bachelor/Secondo%20Anno/Sistemi%20Operativi%20II/Sistemi%20Operativi%20II.pdf) <br/> (ora unito con Sistemi Operativi I) | Completi | 16/03/2025 |
+  | [Basi di Dati I](../../raw/main/Bachelor/Secondo%20Anno/Basi%20di%20Dati%20I/Basi%20di%20Dati%20I.pdf) <br/> (ora unito con Basi di Dati II) | Completi | 25/05/2025 |
+  | [Basi di Dati II](https://github.com/CasuFrost/University_notes/raw/main/Secondo%20Anno/Secondo%20Semestre/Basi%20di%20Dati%202/Latex%20source%20file/Basi%20di%20Dati%20modulo%202.pdf) <br/> (ora unito con Basi di Dati I) | Scritti da [@CasuFrost](https://github.com/CasuFrost) | - |
+  | [Basi di Dati II - Progetti svolti](../../blob/main/Bachelor/Secondo%20Anno/Basi%20di%20Dati%20II/README.md) <br/> (ora unito con Basi di Dati I) | Completi | 09/10/2024 |
 </details>
 </div>
 
@@ -108,14 +108,14 @@ Disclaimers ⚠️
 | [Computational Complexity](../../raw/main/Master/Computational%20Complexity/Computational%20Complexity.pdf) | Completed | 17/02/2025 |
 | [Cryptography](../../raw/main/Master/Cryptography/Cryptography.pdf) | Completed | 05/03/2026 |
 | [Graph Theory](../../raw/main/Master/Graph%20Theory/Graph%20Theory.pdf) | Completed | 16/10/2025 |
-| [Mathematical Logic for Computer Science](../../raw/main/Master/Mathematical%20Logic%20for%20Computer%20Science/Mathematical%20Logic%20for%20Computer%20Science.pdf) | Completed | 25/06/2025 |
+| [Mathematical Logic for Computer Science](../../raw/main/Master/Mathematical%20Logic%20for%20Computer%20Science/Mathematical%20Logic%20for%20Computer%20Science.pdf) <br/> (now called Logic and Reasoning) | Completed | 25/06/2025 |
 | Models of Computation [ !! ] | - | - |
 | [Quantum Computing](https://raw.githubusercontent.com/aflaag-notes/quantum-computing/main/src/QuantumComputing.pdf) | Written by [@aflaag](https://github.com/aflaag) | - |
 | [Network Algorithms](https://raw.githubusercontent.com/aflaag-notes/network-algs/main/src/Network%20Algorithms.pdf) | Written by [@aflaag](https://github.com/aflaag) | - |
 | [Autonomous Networking](https://raw.githubusercontent.com/loresaba/scritti-di-informatica/refs/heads/master/master/first%20year/autonomous_networking/autonomous_netwoking.pdf) | Written by [@loresaba](https://github.com/loresaba) | - |
 | [Computer Network Performance](../../raw/main/Master/Computer%20Network%20Performance/Computer%20Network%20Performance.pdf) | Completed | 05/12/2025 |
-| Deep Learning | - | - |
-| [Distributed Systems](../../raw/main/Master/Distributed%20Systems/Distributed%20Systems.pdf) | Only some exercises | 13/11/2025 |
+| Internet of Things | - | - |
+| Distributed Systems [ !! ] | - | - |
 | [Machine Learning](../../raw/main/Master/Machine%20Learning/Machine%20Learning.pdf) | Completed | 10/03/2025 |
 </details>
 </div>
