@@ -76,7 +76,7 @@ Disclaimers ⚠️
   | [Sistemi Operativi I](../../raw/main/Bachelor/Secondo%20Anno/Sistemi%20Operativi%20I/Sistemi%20Operativi%20I.pdf) <br/> (ora chiamato Sistemi Operativi) | Completi | 16/03/2025 |
   | [Sistemi Operativi II](../../raw/main/Bachelor/Secondo%20Anno/Sistemi%20Operativi%20II/Sistemi%20Operativi%20II.pdf) <br/> (ora unito con Sistemi Operativi I) | Completi | 16/03/2025 |
   | [Basi di Dati I](../../raw/main/Bachelor/Secondo%20Anno/Basi%20di%20Dati%20I/Basi%20di%20Dati%20I.pdf) <br/> (ora unito con Basi di Dati II) | Completi | 25/05/2025 |
-  | [Basi di Dati II](https://github.com/CasuFrost/University_notes/raw/main/Secondo%20Anno/Secondo%20Semestre/Basi%20di%20Dati%202/Latex%20source%20file/Basi%20di%20Dati%20modulo%202.pdf) <br/> (ora unito con Basi di Dati I) | Scritti da [@CasuFrost](https://github.com/CasuFrost) | - |
+  | [Basi di Dati II](https://github.com/CasuFrost/University_notes/raw/main/Secondo%20Anno/Secondo%20Semestre/Basi%20di%20Dati%202/Latex%20source%20file/Basi%20di%20Dati%20modulo%202.pdf) [ !! ] <br/> (ora unito con Basi di Dati I) | Scritti da [@CasuFrost](https://github.com/CasuFrost) | - |
   | [Basi di Dati II - Progetti svolti](../../blob/main/Bachelor/Secondo%20Anno/Basi%20di%20Dati%20II/README.md) <br/> (ora unito con Basi di Dati I) | Completi | 09/10/2024 |
 </details>
 </div>
