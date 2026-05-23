@@ -1,0 +1,198 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{friedberg}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1bc4ccf8ab109b39d5d637cee6f3004}{%
+           family={Friedberg},
+           familyi={F\bibinitperiod},
+           given={Richard\bibnamedelima M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1bc4ccf8ab109b39d5d637cee6f3004}
+      \strng{fullhash}{b1bc4ccf8ab109b39d5d637cee6f3004}
+      \strng{fullhashraw}{b1bc4ccf8ab109b39d5d637cee6f3004}
+      \strng{bibnamehash}{b1bc4ccf8ab109b39d5d637cee6f3004}
+      \strng{authorbibnamehash}{b1bc4ccf8ab109b39d5d637cee6f3004}
+      \strng{authornamehash}{b1bc4ccf8ab109b39d5d637cee6f3004}
+      \strng{authorfullhash}{b1bc4ccf8ab109b39d5d637cee6f3004}
+      \strng{authorfullhashraw}{b1bc4ccf8ab109b39d5d637cee6f3004}
+      \field{labelalpha}{Fri57}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Two recursively enumerable sets of incomparable degrees of unsolvability (solution of Post's problem, 1944)}
+      \field{year}{1957}
+    \endentry
+    \entry{kleene_post}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9a62ed53de06e4be288a0b76aed4b53a}{%
+           family={Kleene},
+           familyi={K\bibinitperiod},
+           given={Stephen\bibnamedelima C.},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=312cc78fbd66e2bbfa91518cb9b5b3d0}{%
+           family={Post},
+           familyi={P\bibinitperiod},
+           given={Emil\bibnamedelima L.},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{5887af350d12b74a5d97e2cbe47b4a85}
+      \strng{fullhash}{5887af350d12b74a5d97e2cbe47b4a85}
+      \strng{fullhashraw}{5887af350d12b74a5d97e2cbe47b4a85}
+      \strng{bibnamehash}{5887af350d12b74a5d97e2cbe47b4a85}
+      \strng{authorbibnamehash}{5887af350d12b74a5d97e2cbe47b4a85}
+      \strng{authornamehash}{5887af350d12b74a5d97e2cbe47b4a85}
+      \strng{authorfullhash}{5887af350d12b74a5d97e2cbe47b4a85}
+      \strng{authorfullhashraw}{5887af350d12b74a5d97e2cbe47b4a85}
+      \field{labelalpha}{KP54}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The upper semi-lattice of degrees of recursive unsolvability}
+      \field{year}{1954}
+    \endentry
+    \entry{muchnik}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=793ababc4c00b13f968c9d62d485100e}{%
+           family={Muchnik},
+           familyi={M\bibinitperiod},
+           given={Albert\bibnamedelima A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{793ababc4c00b13f968c9d62d485100e}
+      \strng{fullhash}{793ababc4c00b13f968c9d62d485100e}
+      \strng{fullhashraw}{793ababc4c00b13f968c9d62d485100e}
+      \strng{bibnamehash}{793ababc4c00b13f968c9d62d485100e}
+      \strng{authorbibnamehash}{793ababc4c00b13f968c9d62d485100e}
+      \strng{authornamehash}{793ababc4c00b13f968c9d62d485100e}
+      \strng{authorfullhash}{793ababc4c00b13f968c9d62d485100e}
+      \strng{authorfullhashraw}{793ababc4c00b13f968c9d62d485100e}
+      \field{labelalpha}{Muc56}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{On the unsolvability of the problem of reducibility in the theory of algorithms}
+      \field{year}{1956}
+    \endentry
+    \entry{post_degrees}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=312cc78fbd66e2bbfa91518cb9b5b3d0}{%
+           family={Post},
+           familyi={P\bibinitperiod},
+           given={Emil\bibnamedelima L.},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{312cc78fbd66e2bbfa91518cb9b5b3d0}
+      \strng{fullhash}{312cc78fbd66e2bbfa91518cb9b5b3d0}
+      \strng{fullhashraw}{312cc78fbd66e2bbfa91518cb9b5b3d0}
+      \strng{bibnamehash}{312cc78fbd66e2bbfa91518cb9b5b3d0}
+      \strng{authorbibnamehash}{312cc78fbd66e2bbfa91518cb9b5b3d0}
+      \strng{authornamehash}{312cc78fbd66e2bbfa91518cb9b5b3d0}
+      \strng{authorfullhash}{312cc78fbd66e2bbfa91518cb9b5b3d0}
+      \strng{authorfullhashraw}{312cc78fbd66e2bbfa91518cb9b5b3d0}
+      \field{labelalpha}{Pos44}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Recursively enumerable sets of positive integers and their decision problems}
+      \field{year}{1944}
+    \endentry
+    \entry{sacks}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=227b74c2ef35ef2de30d1af50e56c315}{%
+           family={Sacks},
+           familyi={S\bibinitperiod},
+           given={Gerald\bibnamedelima E.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{fullhash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{fullhashraw}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{bibnamehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authorbibnamehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authornamehash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authorfullhash}{227b74c2ef35ef2de30d1af50e56c315}
+      \strng{authorfullhashraw}{227b74c2ef35ef2de30d1af50e56c315}
+      \field{labelalpha}{Sac64}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Recursively Enumerable Degrees are Dense}
+      \field{year}{1964}
+    \endentry
+    \entry{simpson}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=c679e480e246b735f98fd8c7d3e1aab1}{%
+           family={Simpson},
+           familyi={S\bibinitperiod},
+           given={Stephen\bibnamedelima G.},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{c679e480e246b735f98fd8c7d3e1aab1}
+      \strng{fullhash}{c679e480e246b735f98fd8c7d3e1aab1}
+      \strng{fullhashraw}{c679e480e246b735f98fd8c7d3e1aab1}
+      \strng{bibnamehash}{c679e480e246b735f98fd8c7d3e1aab1}
+      \strng{authorbibnamehash}{c679e480e246b735f98fd8c7d3e1aab1}
+      \strng{authornamehash}{c679e480e246b735f98fd8c7d3e1aab1}
+      \strng{authorfullhash}{c679e480e246b735f98fd8c7d3e1aab1}
+      \strng{authorfullhashraw}{c679e480e246b735f98fd8c7d3e1aab1}
+      \field{labelalpha}{Sim77}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{First-Order Theory of the Degrees of Recursive Unsolvability}
+      \field{year}{1977}
+    \endentry
+    \entry{turing}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=1210277649f3c7541e2750ee21da6237}{%
+           family={Turing},
+           familyi={T\bibinitperiod},
+           given={Alan\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1210277649f3c7541e2750ee21da6237}
+      \strng{fullhash}{1210277649f3c7541e2750ee21da6237}
+      \strng{fullhashraw}{1210277649f3c7541e2750ee21da6237}
+      \strng{bibnamehash}{1210277649f3c7541e2750ee21da6237}
+      \strng{authorbibnamehash}{1210277649f3c7541e2750ee21da6237}
+      \strng{authornamehash}{1210277649f3c7541e2750ee21da6237}
+      \strng{authorfullhash}{1210277649f3c7541e2750ee21da6237}
+      \strng{authorfullhashraw}{1210277649f3c7541e2750ee21da6237}
+      \field{labelalpha}{Tur36}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{On Computable Numbers, with an Application to the Entscheidungsproblem}
+      \field{year}{1936}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
