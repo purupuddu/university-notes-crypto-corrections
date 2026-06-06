@@ -1582,7 +1582,7 @@
 
         Now, let $H'(\lambda, b)$ be the hybrid equivalent to $H(\lambda, b)$ where applications of $R(\cdot)$ is replaced with truly random strings. It's easy to see that $H'(\lambda, 0) \equiv H'(\lambda, 1)$.
 
-        \textbf{Claim 2}: $H(\lambda, b) \approx_c \mathcal{U}_{n(d^*+1)}$ for $b \in \{0,1\}$
+        \textbf{Claim 2}: $H(\lambda, b) \approx_c H'(\lambda,b)$ for $b \in \{0,1\}$
 
         \begin{proof}[Proof of Claim 2]
             Consider the values $R(r^*), R(r^*+1), \ldots, R(r^*+d^*-1)$ computed during the challenge query of the game $H(\lambda, b)$. Similarly, consider the values $R(r^{(i)}), R(r^{(i)}+1), \ldots, R(r^{(i)}+d_i-1)$ computed during the encryption queries.
@@ -1985,20 +1985,16 @@
         where $(K_1, K_2) \in \mathcal{K}_1 \times \mathcal{K}_2$ and $\mathrm{Dec}(K_1, c) = m \mid\mid \tau$.
     \end{enumerate}  
 
-    In real-world implementations, Encrypt-and-MAC was used by old versions of the \textit{SSL/TLS protocol}, while new versions use Encrypt-then-MAC. Mac-then-Encrypt is used by the \textit{SSH protocol}. Out of all the three constructions, only EtM guarantees that the resulting scheme satisfies both CPA-security and integrity when $\Pi_1$ is CPA-secure and $\Pi_2$ is \textbf{Strong UFCMA (SUFCMA)}. The SUFCMA game is defined in the same way as the UFCMA game, with the additional constraint imposing that each tag in the game is unique, i.e. $\tau_i \neq \tau_j$ and $\tau^* \neq \tau_j$ for all $i,j \in [q]$ with $i \neq j$ (recall that the standard UFCMA game only imposes that $m^* \neq m_i$).
-    
-    \begin{frameddefn}{SUFCMA-security}
-        Let $\Pi = (\mathrm{Tag})$ be a MAC. We say that $\Pi$ is SUFCMA-secure if:
-        \[\Pr[\mathrm{Game}^{\text{SUFCMA}}_{\Pi, A}(\lambda) = 1] \leq \mathrm{negl}(\lambda)\]
-        for all PPT adversaries $A$.
-    \end{frameddefn}
+    In real-world implementations, Encrypt-and-MAC was used by old versions of the \textit{SSL/TLS protocol}, while new versions use Encrypt-then-MAC. Mac-then-Encrypt is used by the \textit{SSH protocol}. Out of all the three constructions, only EtM guarantees that the resulting scheme satisfies both CPA-security and integrity when $\Pi_1$ is CPA-secure and $\Pi_2$ has a particular type of UFCMA security: tags are required to be unique, i.e. for each key $K \in \mathcal{K}$ and each message $m \in \mathcal{M}$ there is an unique tag $\tau \in \mathcal{T}$ such that $\mathrm{Tag}(K, m) = \tau$.
+
+    We observe that this property isn't as strong as it seems: every UFCMA-secure MAC scheme that we have seen until now satisfies this property (in fact, this property basically requires that tags aren't randomized).
 
     \begin{framedthm}{}
-        Let $\Pi' = (\mathrm{Enc}', \mathrm{Dec}')$ be an EtM SKE constructed from the SKE $\Pi_1 = (\mathrm{Enc}, \mathrm{Dec})$ and the MAC $\Pi_2 = (\mathrm{Tag})$. Then, $\Pi'$ satisfies both CPA-security and integrity if $\Pi_1$ is CPA-secure and $\Pi_2$ is SUFCMA-secure.
+        Let $\Pi' = (\mathrm{Enc}', \mathrm{Dec}')$ be an EtM SKE constructed from the SKE $\Pi_1 = (\mathrm{Enc}, \mathrm{Dec})$ and the MAC $\Pi_2 = (\mathrm{Tag})$. Then, $\Pi'$ satisfies both CPA-security and integrity if $\Pi_1$ is CPA-secure and $\Pi_2$ is UFCMA-secure with unique tags.
     \end{framedthm}
 
     \begin{proof}
-        As usual, we proceed with two reductions: one that goes from one CPA-security to the other and one that goes from integrity to SUFCMA-security.
+        As usual, we proceed with two reductions: one that goes from one CPA-security to the other and one that goes from integrity to UFCMA-security with unique tags.
 
         \textbf{Claim 1}: $\Pi'$ is CPA-secure
 
@@ -2021,24 +2017,24 @@
         \textbf{Claim 2}: $\Pi'$ satisfies integrity
 
         \begin{proof}[Proof of Claim 2.]
-            By way of contradiction, suppose that there is an adversary $A''$ such that $\Pr[\mathrm{Game}_{\Pi', A''}^{\text{INT}}(\lambda) = 1] \geq \lambda^{-c}$ for some $c > 0$. We define a new adversary $A_2$ such that $\Pr[\mathrm{Game}_{\Pi_2, A_2}^{\text{SUFCMA}}(\lambda) = 1] \geq \lambda^{-c}$:
+            By way of contradiction, suppose that there is an adversary $A''$ such that $\Pr[\mathrm{Game}_{\Pi', A''}^{\text{INT}}(\lambda) = 1] \geq \lambda^{-c}$ for some $c > 0$. We define a new adversary $A_2$ such that $\Pr[\mathrm{Game}_{\Pi_2, A_2}^{\text{UFCMA}}(\lambda) = 1] \geq \lambda^{-c}$:
             \begin{enumerate}
                 \item $A_2$ picks a key $K_1 \in_R \mathcal{K}_1$. This key will be used to compute encryptions (observe that the challenger $C_2$ also picks a key $K_2 \in_R \mathcal{K}_2$, which will be used for taggging)
-                \item $A_2$ starts the INT game with $A''$ and the SUFCMA game with $C_2$
+                \item $A_2$ starts the INT game with $A''$ and the UFCMA game with $C_2$
                 \item For each encryption query $m_i$ from $A''$, $A_2$ computes $\mathrm{Enc}(K_1, m_i) = c_i$ and sends it to $C_2$, which replies with the tag $\tau_i$. 
                 \item Upon receiving $\tau_i$, $A_2$ returns $(c_i, \tau_i)$ to $A''$
                 \item After a polynomial amount of encryption queries, $A''$ sends the challenge pair $(c^*, \tau^*)$ to $A_2$, who will forward it to $C_2$.
-                \item If $\mathrm{Tag}(K_2, c^*) = \tau^*$ and $c^* \neq c_i$ for all $c_i$, $A_2$ wins the SUFCMA game against $C_2$, otherwise $C_2$ wins
+                \item If $\mathrm{Tag}(K_2, c^*) = \tau^*$ and $c^* \neq c_i$ for all $c_i$, $A_2$ wins the UFCMA game against $C_2$, otherwise $C_2$ wins
             \end{enumerate}
 
-            Unlike the previous claim, this reduction requires some discussion. First of all, we observe that in order to play a valid INT game the adversary $A''$ must pick a challenge pair $(c^*, \tau^*)$ such that $(c^*, \tau^*) \neq (c_i, \tau_i)$ for every encryption query $m_i$. However, this can hold true both when $c^* \neq c_i$ and when $\tau^* \neq \tau_i$ (or both). This is where SUFCMA-security plays a crucial role: we know that each tag in the game is unique, thus $\tau^*$ must also be different from all previous tags since $c^*$ is different from all previous $c_i$.
+            Unlike the previous claim, this reduction requires some discussion. First of all, we observe that in order to play a valid INT game the adversary $A''$ must pick a challenge pair $(c^*, \tau^*)$ such that $(c^*, \tau^*) \neq (c_i, \tau_i)$ for every encryption query $m_i$. However, this can hold true both when $c^* \neq c_i$ and when $\tau^* \neq \tau_i$ (or both). This is where UFCMA-security plays a crucial role. By way of contradiction, suppose that $c^* = c_i$ for some query. Then, by uniqueness of tags it must also hold that $\tau^* = \tau_i$, therefore $(c^*, \tau^*) = (c_i, \tau_i)$, which is absurd. Therefore, it is always guaranteed that $c^* \neq c_i$. 
 
-            Therefore, when $(c^*, \tau^*)$ is such that $\mathrm{Dec}'((K_1, K_2), (c^*, \tau^*)) \neq \bot$ we know that both $\mathrm{Tag}(K_2, c^*) = \tau^*$ (guaranteed since the decryption works) and $c^* \neq c_i$ for all $c_i$ hold (guaranteed by the uniqueness of tags), declaring the adversary $A_2$ as winner. Otherwise, if  $\mathrm{Dec}'((K_1, K_2), (c^*, \tau^*)) = \bot$ then $\mathrm{Tag}(K_2, c^*) \neq \tau^*$ must hold, declaring the challenger $C_2$ as winner.
+            Thus, when $\mathrm{Dec}'((K_1, K_2), (c^*, \tau^*)) \neq \bot$ holds we know that both $\mathrm{Tag}(K_2, c^*) = \tau^*$ (guaranteed since the decryption works) and $c^* \neq c_i$ for all $c_i$ hold (guaranteed by the uniqueness of tags), declaring the adversary $A_2$ as winner. Otherwise, if $\mathrm{Dec}'((K_1, K_2), (c^*, \tau^*)) = \bot$ then $\mathrm{Tag}(K_2, c^*) \neq \tau^*$ must hold, declaring the challenger $C_2$ as winner.
         \end{proof}
     \end{proof}
 
     \begin{framedcor}{}
-        Let $\Pi' = (\mathrm{Enc}', \mathrm{Dec}')$ be an EtM SKE constructed from the SKE $\Pi_1 = (\mathrm{Enc}, \mathrm{Dec})$ and the MAC $\Pi_2 = (\mathrm{Tag})$. Then, $\Pi'$ is CCA-secure if $\Pi_1$ is CPA-secure and $\Pi_2$ is SUFCMA-secure.
+        Let $\Pi' = (\mathrm{Enc}', \mathrm{Dec}')$ be an EtM SKE constructed from the SKE $\Pi_1 = (\mathrm{Enc}, \mathrm{Dec})$ and the MAC $\Pi_2 = (\mathrm{Tag})$. Then, $\Pi'$ is CCA-secure if $\Pi_1$ is CPA-secure and $\Pi_2$ is UFCMA-secure with unique tags.
     \end{framedcor}
 
     \begin{proof}
@@ -2047,7 +2043,7 @@
 
     \section{Block ciphers and Feistel networks}
 
-    We saw how to get CPA-secure SKEs and UFCMA-secure MACs through PRFs. To get SUFCMA-secure MACS, small changes to the given construction suffice (e.g. using PRFs with unique outputs, such as PRPs). By combining these two constructions in an Encrypt-then-Mac fashion, we finally get our CCA-secure construction, proving that excellent cryptography symmetric-key encryption is theoretically possible. However, we're still missing a link: we need to show that PRP can be constructed.
+    We saw how to get CPA-secure SKEs and UFCMA-secure MACs through PRFs. To get UFCMA-secure MACS, small changes to the given construction suffice (e.g. using PRFs with unique outputs, such as PRPs). By combining these two constructions in an Encrypt-then-Mac fashion, we finally get our CCA-secure construction, proving that excellent cryptography symmetric-key encryption is theoretically possible. However, we're still missing a link: we need to show that PRP can be constructed.
 
     PRPs are useful not only for their output uniqueness, but also for their invertibility. In particular, real-world cryptosystems are based on encryption schemes whose decryption function is exacly the inverse of the encryption function. Since the encryption must be efficient both in theory and practice, decryptions based on PRPs also achieve this property.
     
@@ -2489,10 +2485,10 @@
     \textit{Solution}:
 
     Let $I$ be the random variable denoting the number of times $P$ is evaluated to get an output. Since $I$ has geometric distribution, we have that:
-    \[\Exp[I] = \sum_{i = 1}^{+\infty} i \Pr[I = i] = \sum_{i = 1}^{+\infty} i (1-t)^{i-1}t = \frac{1}{t}\]
+    \[\Exp[I] = \sum_{i = 1}^{+\infty} i \Pr[I = i] = \sum_{i = 1}^{+\infty} i (1-\frac{1}{t})^{i-1}\frac{1}{t} = t\]
 
-    The evaluation of $P'$ can therefore be considered efficient when $\frac{1}{t}$ is polynomial in the length $n = \log \abs{\mathcal{X}}$ of an element of $\mathcal{X}$, i.e. when:
-    \[\frac{\abs{\mathcal{X}}}{\abs{\mathcal{X}'}} = \frac{1}{t} \leq \log^c \abs{\mathcal{X}} \implies \abs{X'} \geq \frac{\abs{\mathcal{X}}}{\log^c \abs{\mathcal{X}}} = \frac{2^n}{n^c}\]
+    The evaluation of $P'$ can therefore be considered efficient when $t$ is polynomial in the length $n = \log \abs{\mathcal{X}}$ of an element of $\mathcal{X}$, i.e. when:
+    \[\frac{\abs{\mathcal{X}}}{\abs{\mathcal{X}'}} = t \leq \log^c \abs{\mathcal{X}} \implies \abs{X'} \geq \frac{\abs{\mathcal{X}}}{\log^c \abs{\mathcal{X}}} = \frac{2^n}{n^c}\]
     for some $c > 0$.
     
     For the second request, we get a trivial base case when $\abs{\mathcal{X}}-\abs{\mathcal{X}'} = 0$ this is true only when $\mathcal{X} = \mathcal{X}'$. Now, assume that $\abs{\mathcal{X}}-\abs{\mathcal{X}'} > 0$. Fix $\widehat x \in \mathcal{X}-\mathcal{X}'$ and let $\widehat P$ the equivalent of $P'$ but defined on $\widehat X = \mathcal{X}' \cup \{\widehat{x}\}$. By inductive hypothesis, we know that $\widehat P$ is a PRP. By way of contradiction, suppose that there is an adversary $A^{\text{PRP}}$ for the PRP game of $P'$. We notice that $A^{\text{PRP}}$ is also a distinguisher for the PRP game of $\widehat P$:

@@ -65,6 +65,17 @@
 
 % \end{frame}
 
+\begin{frame}{Roadmap}
+\framesubtitle{\qquad}
+
+    \begin{itemize}
+    \item Introduction on computation
+    \item Degrees of Uncomputability
+    \item The Finite Extension method
+    \item The Finite Injury Priority method
+    \end{itemize}
+\end{frame}
+
 \section{Introduction}
 
 \begin{frame}{What is computation?}
@@ -274,13 +285,15 @@
 \framesubtitle{Low degrees}
     \begin{itemize}[<+->]
         \item The jump operator can be iteratively applied to get infinite levels of the hierarchy
-        \item A degree is said to be r.e. if it contains an r.e. set
-        \item Not all sets inside an r.e. degree are r.e. (e.g. $\overline{H} \in 0'$)
         \item All r.e. degrees are below $0'$
         \begin{itemize}
-            \item Equivalently, all degrees above $0'$ are not r.e.
+            \item A degree is said to be r.e. if it contains an r.e. set
+            \item Not all sets inside an r.e. degree are r.e. (e.g. $\overline{H} \in 0'$)
         \end{itemize}
         \item Degrees below $0'$ are referred to as \textbf{low degrees}
+        \begin{itemize}
+            \item Being below $0'$ doesn't guarantee being r.e.!
+        \end{itemize}
     \end{itemize}
 \end{frame}
 
@@ -298,12 +311,8 @@
 \framesubtitle{Post's problem}
     \begin{itemize}[<+->]
         \item In \cite{post_degrees}, Emil Post investigates the existence of a degree $d$ such that $0 \prec d \prec 0'$
-        \item He was able to prove that for each degree $A \neq 0$ there is another degree $B$ that is incomparable with $A$.
-        \begin{itemize}
-            \item He was also able to force that $A$ and $B$ are low set
-            \item This answers his original question
-        \end{itemize}
-        \item However, he couldn't find a way to force $A$ and $B$ to be r.e.
+        \item He was able to prove that the existence of such degree,
+        \item However, he couldn't find a way to force the degree to be r.e.
     \end{itemize}
 
     \quad
@@ -348,10 +357,12 @@
 
 \begin{frame}{The Finite Extension method}
 \framesubtitle{The Kleene-Post theorem}
-    \cite{kleene_post} \textbf{Theorem:} There are two low sets $A$ and $B$ that are incomparable
+    \begin{theorem}{\cite{kleene_post}}
+    There are two low sets $A$ and $B$ that are incomparable
+    \end{theorem}
     \begin{itemize}[<+->]
         \item Requirements:
-        \[R_{2j} := (\psi_j^A \neq B) \qquad\qquad R_{2j+1} := (\psi_j^B \neq A)\]
+        \[R_{2j} := (\psi_j^B \neq A) \qquad\qquad R_{2j+1} := (\psi_j^A \neq B)\]
         \item Start by setting $\alpha_0 = \beta_0 = \varepsilon$
     \end{itemize}
 \end{frame}
@@ -361,9 +372,9 @@
     \begin{itemize}[<+->]
         
         \item Consider any index $2j > 0$. Pick any position $x \in \N$ such that $\beta_{2j-1}(x) = *$ (guaranteed to exist)
-        \item If there is any finite extension $\alpha'$ of $\alpha_{2j-1}$ such that $\Phi_{2j-1}^{\{\alpha'\}}(x) \downarrow$, we set:
+        \item If there is any finite extension $\alpha'$ of $\alpha_{2j-1}$ such that $\Phi_{j}^{\{\alpha'\}}(x) \downarrow$, we set:
         \[\alpha_{2j} = \alpha' \qquad \beta_{2j}(y) = \left \{ \begin{array}{ll}
-            1-\psi_{2j}^{\{\alpha'\}}(x) & \text{if } y = x \\
+            1-\psi_{j}^{\{\alpha'\}}(x) & \text{if } y = x \\
             \beta_{2j-1}(y) & \text{otherwise}
         \end{array}\right .\]
 
@@ -404,21 +415,6 @@
     $\hfill \square$
 \end{frame}
 
-\begin{frame}{The Finite Extension method}
-\framesubtitle{Strenghts and weaknesses}
-    
-    \begin{itemize}[<+->]
-        \item We observe that this general method can be easily modified and extended.
-        \item For instance, 
-        \[R_{2j} := (\text{If } W_j \text{ infinite then }  W_j \cap A \neq \varnothing) \qquad\qquad R_{2j+1} := (\psi_j^B \neq A)\]
-        imposes that $A$ is a \textbf{simple set} and that $B$ is a low set such that $A \not\leq_T B$
-        \begin{itemize}
-            \item $W_j = \{x \in \N \mid \Phi_j(x) \downarrow\}$
-            \item $A$ is \textit{simple} when $A$ is r.e., $\overline{A}$ is infinite and $\overline{A}$ doesn't contain an infinite r.e. set
-        \end{itemize}
-    \end{itemize}
-\end{frame}
-
 \section{The Finite Injury Priority method}
 
 \begin{frame}{The Finite Injury Priority method}
@@ -426,10 +422,10 @@
     \begin{itemize}[<+->]
         \item \textbf{Injury}: a requirement gets injured when its satisfaction is not guaranteed anymore.
         
-        \item The key idea is to assign a priority level to each requirement and force two conditions during the construction of the sets:
+        \item The key idea is to assign a priority level to each requirement:
         \begin{enumerate}
-            \item Each requirement has finitely many requirements with higher priority
-            \item Each requirement can be injured only by requirements with higher priority
+            \item Each requirement will have finitely many requirements with higher priority
+            \item Each requirement will be injured only by requirements with higher priority
         \end{enumerate}
 
     \item We'll use \textit{sets} instead of strings to construct $A$ and $B$
@@ -455,11 +451,12 @@
 
 \begin{frame}{The Finite Injury Priority method}
 \framesubtitle{The Friedberg-Muchnik theorem}
-    \cite{friedberg,muchnik} \textbf{Thm.:} There are two r.e. sets $A$ and $B$ that are incomparable
+    \begin{theorem}{\cite{friedberg,muchnik}}
+        There are two r.e. sets $A$ and $B$ that are incomparable
+    \end{theorem}
     \begin{itemize}[<+->]
         \item Requirements:
-        \[R_{2j} := (\psi_j^A \neq B) \qquad\qquad R_{2j+1} := (\psi_j^B \neq A)\]
-        \item Start by setting $A_0 = B_0 = \varnothing$
+        \[R_{2j} := (\psi_j^B \neq A) \qquad\qquad R_{2j+1} := (\psi_j^A \neq B)\]
         \item We say that an index $x$ is a \textbf{witness} for the requirement $R_{2i}$ at step $s$ if $\Phi_{i,s}^{B_s}(x) \downarrow$ and $\psi_{i,s}^{B_s}(x) \neq A_s(x)$ (symmetric definition for $R_{2i+1}$)
     \end{itemize}
 \end{frame}
@@ -477,7 +474,6 @@
             \item $w_{j,s} = r_{j,s} = -1$ when no witness is known for $R_j$ at step $s$
             \item Indices that come before $r_{j,s}$ don't break any requirement.
         \end{itemize}
-        \item $R_j$ gets \textit{injured} at step $s$ if $A_{s+1} - A_s$ contains some $x \leq r_{j,s}$.
     \end{itemize}
 \end{frame}
 
@@ -485,7 +481,7 @@
 \framesubtitle{The Friedberg-Muchnik theorem}
     \begin{itemize}[<+->]
         \item Let $A_0 = B_0 = \varnothing$ and let $w_{j,0} = r_{j,0} = -1$ for each $j \in \N$.
-        \item Consider a generic step $s = 2i$ (symmetrical argument for $s = 2i+1$).
+        \item Consider a generic step $s > 0$
         \item For each $j \leq s$, if $w_{j,s-1} \neq -1$ we propagate the previous values because $R_{2i}$ already has a witness.
         \begin{itemize}
             \item $A_{s} = A_{s-1}$ and $B_{s} = B_{s-1}$
@@ -510,20 +506,6 @@
 
 \begin{frame}{The Finite Injury Priority method}
 \framesubtitle{The Friedberg-Muchnik theorem}
-    \begin{itemize}
-        \item Suppose now that $w_{2h+1,s-1} = -1$.
-        \item Let $x$ be the minimum index such that $x \notin B_{s-1}$ and such that for all $k < 2h+1$ it holds that $x > r_{k,s}$.
-        \item If $\Phi_{h,s-1}^{A_{s-1}}(x) \uparrow$, we preserve that $w_{2h+1,s} = r_{2h+1,s} = -1$ and propagate $A_{s} = A_{s-1}$, $B_{s} = B_{s-1}$. This trivially satisfies the requirement $R_{2h+1}$.
-        \item Otherwise, if $\psi_{h,s-1}^{A_{s-1}}(x) = 0$, we set:
-        \[\begin{array}{ccc}
-            w_{2h+1,s} = x & \qquad & r_{2h+1,s} = \max(x, \omega_{h,s-1}^{A_{s-1}}(x))\\\\
-            A_{s} = A_{s-1} & \qquad & B_{s} = B_{s-1} \cup \{x\}
-        \end{array}\]
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{The Finite Injury Priority method}
-\framesubtitle{The Friedberg-Muchnik theorem}
     \begin{figure}
         \centering
         \includegraphics[scale=0.65]{../images/finite_injury_1.pdf}
@@ -542,42 +524,9 @@
 \framesubtitle{The Friedberg-Muchnik theorem}
     \textbf{Claim}: For each $j \in \N$ it holds that:
     \begin{enumerate}
-        \item $R_j$ is injured a finite number of times
+        \item $R_j$ is injured at most $2^j-1$ times
         \item There is a step $s_0$ such that for all $s \geq s_0$ and for all $k < j$ no new index is added to $A_s$
     \end{enumerate}
-
-    \textit{Proof.}
-    \begin{itemize}[<+->]
-        \item The requirement $R_j$ is injured at step $s$ if some $x \leq r_{j,s}$ is added to $A_{s-1}$ (or to $B_{s-1}$), which happens only when $w_{j,k} = -1$ and $\psi_{j,s}^{B_s}(x) = 0$ (or $\psi_{j,s}^{A_s}(x) = 0)$
-        \item In other words, statement 2. of the claim follows from statement 1. by construction.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{The Finite Injury Priority method}
-\framesubtitle{The Friedberg-Muchnik theorem}
-    \begin{itemize}[<+->]
-        \item Let $g_{j,s} = \sum\limits_{\substack{k <\, j \; s.t. \\ w_{k,s} \neq -1}} 2^{-(k+1)}$ be the injure value of $R_j$ at step $s$
-        \item When $R_j$ is injured at step $s-1$, the smallest value $k < j$ such that $w_{k,s-1} \neq w_{k,s}$ must satisfy $w_{k,s-1} = -1$ and $w_{k,s} \neq -1$ by construction. Thus:
-        \[g_{j,s} - g_{j,s-1} \geq 2^{-(j+1)} - \sum_{k < h < j} 2^{-(h+1)} = 2^{-j}\]
-
-        \item Hence, for each step $s$ we have that $0 \leq g_{j,s} \leq 1-2^{-j}$, concluding that $R_j$ can be injured at most $2^{j}-1$ times
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{The Finite Injury Priority method}
-\framesubtitle{The Friedberg-Muchnik theorem}
-
-    \begin{itemize}
-        \item We observe that there is always a large enough step $s_0^*$ satisfying statements 1. and 2. of the Claim.
-        
-        \item This step guarantees that for each $j \in \N$ it holds that $\lim\limits_{s \to +\infty} w_{j,s}$ and $\lim\limits_{s \to +\infty} r_{j,s}$ exist and are finite.
-        \begin{itemize}
-            \item If for some $s' \geq s_0^*$ it holds that $w_{j,s'} \neq -1$ then it will hold from $s'$ onward
-            \item Otherwise, there is a minimum value $x_s^*$ such that $x_s^* \notin A_s$ and such that $x_s^* > r_{k,s}$ for all $k < j$
-            \item By construction $\Phi_{j,s}^{B_s}(x) \uparrow$ holds in this case
-        \end{itemize}
-    \end{itemize}
-
 \end{frame}
 
 
